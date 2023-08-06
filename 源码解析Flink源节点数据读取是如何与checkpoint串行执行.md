@@ -21,7 +21,7 @@ private boolean performCheckpoint(
             //使用actionExecutor 同步触发checkpoint
             actionExecutor.runThrowing(
                     () -> {
-    					....//进过一些列检查
+    					....//进过一系列检查
                         subtaskCheckpointCoordinator.checkpointState(
                                 checkpointMetaData,
                                 checkpointOptions,
@@ -141,7 +141,7 @@ actionExecutor执行器每次执行都需要获得mutex对象，mutex对象就�
 public void run(SourceContext<String> ctx) throws Exception {
     int i = 0;
     while (true) {
-		//在这个方法里处理
+		//在这个方法中处理
         ctx.collect(String.valueOf(i));
     }
 }
