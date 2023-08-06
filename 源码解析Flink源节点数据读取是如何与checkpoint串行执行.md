@@ -21,7 +21,7 @@ private boolean performCheckpoint(
             //使用actionExecutor 同步触发checkpoint
             actionExecutor.runThrowing(
                     () -> {
-    					....//进过一系列检查
+    			....//经过一系列检查
                         subtaskCheckpointCoordinator.checkpointState(
                                 checkpointMetaData,
                                 checkpointOptions,
