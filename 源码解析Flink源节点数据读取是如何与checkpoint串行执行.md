@@ -237,7 +237,7 @@ public void run() {
 }
 ```
 
-###### 小结
+> 小结
 
 所以在源端写数据时，必须**获得SourceStreamTask中的类变量lock的锁才能进行写数据**；类变量lock刚好和执行器时同一个对象
 
