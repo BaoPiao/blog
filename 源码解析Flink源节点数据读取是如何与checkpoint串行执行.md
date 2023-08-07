@@ -128,7 +128,7 @@ protected StreamTask(
     .......}
 ```
 
-> 小结
+###### 小结
 
 actionExecutor执行器每次执行都需要获得mutex对象，mutex对象就是SourceStreamTask类中的lock对象；即**算子每次执行Checkpoint时都需要获得SourceStreamTask类中lock对象锁才能进行**
 
@@ -237,7 +237,7 @@ public void run() {
 }
 ```
 
-> 小结
+###### 小结
 
 所以在源端写数据时，必须**获得SourceStreamTask中的类变量lock的锁才能进行写数据**；类变量lock刚好和执行器时同一个对象
 
