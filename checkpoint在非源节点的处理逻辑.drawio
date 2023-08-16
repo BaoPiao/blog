@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-08-16T03:01:27.180Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="nmUwV3JrRmXH0-Ala4xH" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-16T05:29:48.168Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="4e2WCyDuL3dQkIFgrIsD" version="21.6.8" type="github">
   <diagram name="第 1 页" id="vXs4aYnu55Jb8QoqiG_9">
     <mxGraphModel dx="946" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="X_uf3_bANwVZ6O4T1dIx-1" value="TaskStream循环" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="300" y="70" width="120" height="60" as="geometry" />
+        <mxCell id="X_uf3_bANwVZ6O4T1dIx-1" value="MailboxProcessor大循环" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="110" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
