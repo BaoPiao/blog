@@ -1,14 +1,96 @@
-<mxfile host="app.diagrams.net" modified="2023-08-19T04:09:19.314Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="JVszvzkZ9NUCD1EMANA9" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-19T04:15:45.185Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="p6k-zx4FDtYP0IiQIWFJ" version="21.6.8" type="github">
   <diagram name="第 1 页" id="vXs4aYnu55Jb8QoqiG_9">
     <mxGraphModel dx="950" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="110" width="290" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="110" width="270" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X_uf3_bANwVZ6O4T1dIx-1" target="Q5ZOrAl08XUM3y3jwKEK-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="X_uf3_bANwVZ6O4T1dIx-1" value="runMailboxLoop大循环" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="250" y="200" width="120" height="60" as="geometry" />
+          <mxGeometry x="210" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-1" target="Q5ZOrAl08XUM3y3jwKEK-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-1" value="processMail小循环" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="430" y="260" width="120" height="60" as="geometry" />
+          <mxGeometry x="210" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-2" target="Q5ZOrAl08XUM3y3jwKEK-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="mailboxDefaultAction.runDefaultAction处理数据" link="mailboxDefaultAction.runDefaultAction" id="Q5ZOrAl08XUM3y3jwKEK-2">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="530" y="410" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-3" target="Q5ZOrAl08XUM3y3jwKEK-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-6" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-5">
+          <mxGeometry x="-0.2538" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-3" target="Q5ZOrAl08XUM3y3jwKEK-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="630" />
+              <mxPoint x="130" y="630" />
+              <mxPoint x="130" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-8" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-7">
+          <mxGeometry x="0.2462" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-3" value="suspendedDefaultAction是否为空" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="530" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-9" target="X_uf3_bANwVZ6O4T1dIx-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-13" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-12">
+          <mxGeometry x="-0.0567" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-9" target="Q5ZOrAl08XUM3y3jwKEK-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-16" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-15">
+          <mxGeometry x="-0.1234" relative="1" as="geometry">
+            <mxPoint x="300" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-9" value="是否还有数据" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="290" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-14" target="X_uf3_bANwVZ6O4T1dIx-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-14" value="suspendedDefaultAction设置为非空" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-20" value="MailboxProcessor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-24" value="StreamTask" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="525" y="120" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
