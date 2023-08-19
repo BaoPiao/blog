@@ -1,33 +1,42 @@
-<mxfile host="app.diagrams.net" modified="2023-08-19T04:17:09.747Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="CbL_EeeNTz4KrNQr1T5c" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-19T08:07:51.165Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="99PLI7JH7-4Df_d9YsIa" version="21.6.8" type="github">
   <diagram name="第 1 页" id="vXs4aYnu55Jb8QoqiG_9">
-    <mxGraphModel dx="1357" dy="699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3202" dy="1223" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="110" width="290" height="580" as="geometry" />
+          <mxGeometry x="-240" y="110" width="620" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-75" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="195" width="330" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-59" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="929" width="330" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-48" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="650" width="290" height="240" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="420" y="110" width="290" height="580" as="geometry" />
+          <mxGeometry x="420" y="110" width="290" height="450" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X_uf3_bANwVZ6O4T1dIx-1" target="Q5ZOrAl08XUM3y3jwKEK-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="X_uf3_bANwVZ6O4T1dIx-1" value="runMailboxLoop大循环" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="210" y="290" width="120" height="60" as="geometry" />
+          <mxGeometry x="210" y="285" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-1" target="Q5ZOrAl08XUM3y3jwKEK-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-1" value="processMail小循环" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="210" y="410" width="120" height="60" as="geometry" />
+          <mxGeometry x="210" y="365" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-2" target="Q5ZOrAl08XUM3y3jwKEK-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <UserObject label="processInput处理数据" id="Q5ZOrAl08XUM3y3jwKEK-2">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-            <mxGeometry x="490" y="410" width="200" height="60" as="geometry" />
+            <mxGeometry x="490" y="365" width="200" height="60" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-3" target="Q5ZOrAl08XUM3y3jwKEK-2">
@@ -35,15 +44,15 @@
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-6" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-5">
           <mxGeometry x="-0.2538" y="-3" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-70" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-3" target="Q5ZOrAl08XUM3y3jwKEK-1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="270" y="630" />
-              <mxPoint x="130" y="630" />
-              <mxPoint x="130" y="440" />
+              <mxPoint x="270" y="535" />
+              <mxPoint x="130" y="535" />
+              <mxPoint x="130" y="395" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -53,11 +62,11 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-3" value="suspendedDefaultAction是否为空" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="230" y="530" width="80" height="80" as="geometry" />
+          <mxGeometry x="200" y="445" width="140" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-9" target="X_uf3_bANwVZ6O4T1dIx-1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="590" y="200" as="targetPoint" />
+            <mxPoint x="590" y="155" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-13" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-12">
@@ -68,29 +77,137 @@
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-9" target="Q5ZOrAl08XUM3y3jwKEK-14">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="590" y="180" />
+              <mxPoint x="590" y="165" />
+              <mxPoint x="270" y="165" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-25" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-15">
           <mxGeometry x="-0.0276" y="2" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-50" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-9" value="是否还有数据" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="290" width="80" height="80" as="geometry" />
+          <mxGeometry x="535" y="225" width="110" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-14" target="X_uf3_bANwVZ6O4T1dIx-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-14" value="suspendedDefaultAction设置为非空" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="210" y="160" width="120" height="60" as="geometry" />
+          <mxGeometry x="210" y="195" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-20" value="MailboxProcessor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="200" y="120" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-24" value="StreamTask" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="525" y="120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="650" width="290" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-27" target="Q5ZOrAl08XUM3y3jwKEK-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-27" value="通过inputSelectionHandler获得可用输入源" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-28" value="StreamTwoInputProcessor" style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="660" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-34" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="650" width="450" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-35" target="Q5ZOrAl08XUM3y3jwKEK-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="565" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-35" value="从inputChannelsWithData中获得channel" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="505" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-36" value="SingleInputGate" style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="645" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-42" target="Q5ZOrAl08XUM3y3jwKEK-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-45" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Q5ZOrAl08XUM3y3jwKEK-44">
+          <mxGeometry x="-0.3801" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-42" value="channel中获得数据是否为checkpoint" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="501.25" y="800" width="127.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-43" target="Q5ZOrAl08XUM3y3jwKEK-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-43" value="将此channel从inputChannelsWithData删除" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="810" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-46" target="Q5ZOrAl08XUM3y3jwKEK-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-46" value="将当前input设置为不可用&lt;br&gt;将availableFuture设置一个新的future等待调用完成" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="900" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-49" target="Q5ZOrAl08XUM3y3jwKEK-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-49" value="pollNext处理数据" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-50" value="CheckpointedInputGate" style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="660" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-51" target="Q5ZOrAl08XUM3y3jwKEK-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-51" value="调用pollNext&lt;span style=&quot;background-color: initial;&quot;&gt;处理数据&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-54" target="Q5ZOrAl08XUM3y3jwKEK-61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="820" />
+              <mxPoint x="100" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-54" value="在handleEvent方法中处理checkpointbarrier" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-61" target="Q5ZOrAl08XUM3y3jwKEK-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-61" value="在processBarrier方法中处理" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="980" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-62" value="SingleCheckpointBarrierHandler" style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="930" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-64" target="Q5ZOrAl08XUM3y3jwKEK-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-64" value="是否到齐" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="151.25" y="1060" width="127.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-71" target="Q5ZOrAl08XUM3y3jwKEK-76">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-330" y="1185" />
+              <mxPoint x="-330" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-71" value="将所有channel加到各自的inputChannelsWithData中&lt;br&gt;将所有的input的future设置为完成" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1160" width="290" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-76" value="run方法将suspendedDefaultAction设置为空" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-172.5" y="270" width="245" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-77" value="ResumeWrapper" style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="205" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
