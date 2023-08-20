@@ -90,11 +90,10 @@ protected void processInput(MailboxDefaultAction.Controller controller) throws E
 public InputStatus processInput() throws Exception {
     int readingInputIndex;
     if (isPrepared) {
-        //获得下一个可用输入
+        //获得下一个可用输入（根据input的availableFuture是否为空，判断是否可用！）
         readingInputIndex = selectNextReadingInputIndex();
     } else {
-   		//先初始化，然后获得下一个可用process
-        
+   		//先初始化，然后调用selectNextReadingInputIndex
         readingInputIndex = selectFirstReadingInputIndex();
     }
     // In case of double notification (especially with priority notification), there may not be
@@ -214,7 +213,7 @@ public Optional<BufferOrEvent> pollNext() throws IOException, InterruptedExcepti
 }
 ```
 
-阻塞：在SingleInputGate中使用inputChannelsWithData队列保存可用channel，当当前获得数据是checkpointBarrier时，channel将不会再放回到队列中同时将当前channel设置为block，以此达到阻塞效果！
+阻塞：在SingleInputGate中使用inputChannelsWithData队列保存可用channel，当当前获得数据是checkpointBarrier时，channel将不会再放回到队列中同时：1. channel设置为block，2. SingleinputGate的availableFuture变量设置为一个新的future；以此达到阻塞效果！
 
 ```java
 //SingleInputGate ->pollNext->getNextBufferOrEvent
@@ -320,5 +319,10 @@ public final BarrierHandlerState barrierReceived(
 
 ```
 
+#### 总结
+
+Flink中为保证Checkpoint的准确性，在多输入源中，通过控制每个inputGate的availableFuture（主要用于判断是否可用）和inputChannelsWithData（直接控制数据返回，以免再次请求拿到数据）来实现阻塞；在checkpoint完成同步阶段后，标记availableFuture为完成，将每个channel放回inputChannelsWithData中，从而实现恢复数据处理。
 
 
+
+当没有channel没有数据时，返回会跳到mail循环，什么时候才会跳出了？
