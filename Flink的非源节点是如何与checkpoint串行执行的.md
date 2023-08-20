@@ -6,7 +6,7 @@ Flink版本：1.13.6
 
 对于多输入算子，如果一个输入源有checkpoint到达，则等待其它输入源，直到所有的checkpoint都到齐，再进行checkpoint。
 
-本文对TwoInputStreamTask的输入StreamTwoInputProcessor进行分析，来分析多输入端是如何暂停进行checkpoint
+本文对TwoInputStreamTask的输入StreamTwoInputProcessor进行分析，分析多输入端是如何暂停进行checkpoint和恢复的
 
 #### 实现思路
 
@@ -19,6 +19,8 @@ Flink版本：1.13.6
 下半部，当StreamTwoInputProcessor一个输入源接收到checkpoint时会将当前输入源（SingleInputGate）设置为不可利用，并判断所有checkpoint是否到达；如果全部到达，则进行checkpoint，处理完成以后，会将所有输入源设置为可用状态。
 
 #### 代码实现
+
+##### 阻塞和恢复公共代码
 
 追踪代码发现TaskManagerGateway.submitTask方法可向TaskManager提交任务，任务的核心逻辑在StreamTask的runMailboxLoop方法中。该方法会调用MailboxProcessor.runMailboxLoop()进入数据处理循环，如下所示
 
@@ -49,10 +51,10 @@ public void runMailboxLoop() throws Exception {
     }
 ```
 
-上述```mailboxDefaultAction.runDefaultAction(defaultActionContext)```实际调用的是StreamTask.processInput方法，代码实现如下：
+上述```mailboxDefaultAction.runDefaultAction(defaultActionContext)```实际调用的是StreamTask.processInput方法（TwoInputStreamTask继承StreamTask），代码实现如下：
 
 ```java
-//代码片段二：StreamTask->processInput处理数据
+//代码片段二：TwoInputStreamTask extend StreamTask->processInput处理数据
 protected void processInput(MailboxDefaultAction.Controller controller) throws Exception {
     //处理数据：数据或checkPointBarrier等
     //当是checkpointBarrier会返回InputStatus.MORE_AVAILABLE
@@ -82,7 +84,7 @@ protected void processInput(MailboxDefaultAction.Controller controller) throws E
 }
 ```
 
-直接调用StreamTwoInputProcessor类的processInput方法
+根据TwoInputStreamTaskcreateInputProcessor方法可知，上述processInput方法是调用的StreamTwoInputProcessor类中方法，该类中有封装了两个StreamOneInputProcessor，并判断每个processor的返回结果和当前可用状态选择其中一个作为输入源，并调用其processInput方法处理数据
 
 ```java
 //StreamTwoInputProcessor -> processInput
@@ -121,7 +123,8 @@ public InputStatus processInput() throws Exception {
 //StreamOneInputProcessor -> processInput
 @Override
 public InputStatus processInput() throws Exception {
-    //调用StreamTaskNetworkInput的emitNext(继承AbstractStreamTaskNetworkInput的方法)
+    //参考StreamTwoInputProcessorFactory的create方法代码，可知input是StreamTaskNetworkInput类，
+    //实际为调用StreamTaskNetworkInput的emitNext(该方法继承AbstractStreamTaskNetworkInput的方法)
     InputStatus status = input.emitNext(output);
 
     if (status == InputStatus.END_OF_INPUT) {
@@ -186,7 +189,7 @@ while (true) {
 }
 ```
 
-处理checkpointBarrier和阻塞channel
+在CheckpointedInputGate中处理checkpointBarrier和阻塞channel
 
 ```java
 //CheckpointedInputGate-> pollNext
@@ -213,7 +216,9 @@ public Optional<BufferOrEvent> pollNext() throws IOException, InterruptedExcepti
 }
 ```
 
-阻塞：在SingleInputGate中使用inputChannelsWithData队列保存可用channel，当当前获得数据是checkpointBarrier时，channel将不会再放回到队列中同时：1. channel设置为block，2. SingleinputGate的availableFuture变量设置为一个新的future；以此达到阻塞效果！
+##### 阻塞
+
+在SingleInputGate中使用inputChannelsWithData队列保存可用channel，当当前获得数据是checkpointBarrier时，channel将不会再放回到队列中同时：1. channel设置为block，2. SingleinputGate的availableFuture变量设置为一个新的future；以此达到阻塞效果！
 
 ```java
 //SingleInputGate ->pollNext->getNextBufferOrEvent
@@ -266,7 +271,9 @@ private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetN
     }
 ```
 
-恢复：在所有InputChannel收到checkpointBarrier时，开始checkpoint，完成checkpoint后将InputChannel加入到各自的可用池中；并将AvailabilityHelper设置为可用
+##### 恢复
+
+在所有InputChannel收到checkpointBarrier时，开始checkpoint，完成checkpoint后将InputChannel加入到各自的可用池中；并将AvailabilityHelper设置为可用
 
 ```java
 //CheckpointedInputGate->handleEvent
@@ -274,6 +281,7 @@ private Optional<BufferOrEvent> handleEvent(BufferOrEvent bufferOrEvent) throws 
         Class<? extends AbstractEvent> eventClass = bufferOrEvent.getEvent().getClass();
         if (eventClass == CheckpointBarrier.class) {
             CheckpointBarrier checkpointBarrier = (CheckpointBarrier) bufferOrEvent.getEvent();
+            //处理每条checkpointBarrier（SingleCheckpointBarrierHandler->processBarrier）
             barrierHandler.processBarrier(checkpointBarrier, bufferOrEvent.getChannelInfo());
         } else if (eventClass == CancelCheckpointMarker.class) {
             barrierHandler.processCancellationBarrier(
