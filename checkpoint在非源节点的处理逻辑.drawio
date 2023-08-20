@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-08-20T00:58:38.719Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="3SA9lfyaMmrr3nV8g6qI" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-20T01:20:29.634Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="MRdM9wNQ11qPtodKVg3C" version="21.6.8" type="github">
   <diagram name="第 1 页" id="vXs4aYnu55Jb8QoqiG_9">
     <mxGraphModel dx="3267" dy="1315" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -240,14 +240,6 @@
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-64" value="是否到齐" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="151.25" y="1060" width="127.5" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="Q5ZOrAl08XUM3y3jwKEK-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Q5ZOrAl08XUM3y3jwKEK-71" target="Q5ZOrAl08XUM3y3jwKEK-76" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="-290" y="1205" />
-              <mxPoint x="-290" y="300" />
-            </Array>
-          </mxGeometry>
         </mxCell>
         <mxCell id="Q5ZOrAl08XUM3y3jwKEK-71" value="将所有channel加到各自的inputChannelsWithData中&lt;br&gt;将所有的input的future设置为完成" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="70" y="1180" width="290" height="50" as="geometry" />
