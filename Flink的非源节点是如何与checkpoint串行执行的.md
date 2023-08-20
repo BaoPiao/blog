@@ -12,7 +12,7 @@ Flink版本：1.13.6
 
 流程图如下图所示：
 
-![checkpoint在非源节点的处理逻辑.drawio](checkpoint在非源节点的处理逻辑.drawio.png)
+![checkpoint在非源节点的处理逻辑.drawio](resource/checkpoint在非源节点的处理逻辑.drawio.png)
 
 上半部，当没有数据时或checkpoint时，线程会一直在ProcessMail小循环（一些控制类消息）直到有数据（数据、checkpointbarrier等）；当有数据时处理一条数据就会去检查一下是否有mail需要处理；线程会在mail处理和数据处理之间来回切换
 
@@ -333,4 +333,4 @@ Flink中为保证Checkpoint的准确性，在多输入源中，通过控制每�
 
 
 
-当没有channel没有数据时，返回会跳到mail循环，什么时候才会跳出了？
+当所有channel没有数据时，返回会跳到mail循环，什么时候才会跳出了？
