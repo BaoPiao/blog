@@ -27,7 +27,7 @@ Akka系统核心包括两个组件：`ActorSystem`和`Actor`（使用demo可以[
 
 Flink的RPC框架基于Akka实现，其中Flink集群中实现RPC通信节点功能主要有：`Dispacher`，`ResourceManager`，`TaskManager`，`TaskManager`；这些节点分别继承了`RpcEndPoint`抽象类，并在实现类中初始化各自`RpcServer`（类似于`Actor`）来提供本地和远程代码请求；`RpcServer`的创建和启动都是由`RpcService`（主要实现`AkkaRpcService`，封装`ActorSystem`）来完成，此外一个`RpcService`可以创建多个`RpcServer`；详细的调用链路图如下所示
 
-![1693350633685](resource/1693350633685.png)
+![调用链路图](resource/调用链路图.png)
 
 ### RpcEndPoint
 
