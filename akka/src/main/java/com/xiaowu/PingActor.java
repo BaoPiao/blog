@@ -13,6 +13,7 @@ public class PingActor extends AbstractActor {
                         {
                             System.out.println(self().path() + " " + "receive " + sender().path() + " msg is " + s);
                             Thread.sleep(1000);
+                            //sender()方法为获得发送者，然后调用它的tell方法发送消息给发送者
                             sender().tell("ping", self());
                         }
                 )

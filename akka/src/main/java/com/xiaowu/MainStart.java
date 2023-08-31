@@ -11,14 +11,15 @@ public class MainStart {
     public static void main(String[] args) throws InterruptedException {
         Config load = ConfigFactory.load();
 
-        ActorSystem akkademy1 = ActorSystem.create("akkademy1", load.getConfig("app1").withFallback(load));
+        //创建system
+        ActorSystem actorSystem1 = ActorSystem.create("actorSystem1", load.getConfig("app1").withFallback(load));
+        ActorSystem actorSystem2 = ActorSystem.create("actorSystem2", load.getConfig("app2").withFallback(load));
 
-        ActorSystem akkademy2 = ActorSystem.create("akkademy2", load.getConfig("app2").withFallback(load));
+        //通过system创建actor
+        ActorRef system2PongActorRef = actorSystem2.actorOf(Props.create(PongActor.class), "pong");
+        ActorRef system1PingActorRef = actorSystem1.actorOf(Props.create(PingActor.class), "ping");
 
-        ActorRef pongActor = akkademy2.actorOf(Props.create(PongActor.class), "pong");
-
-        ActorRef actorRef = akkademy1.actorOf(Props.create(PingActor.class), "ping");
-
-        actorRef.tell("pong", pongActor);
+        //给system1ping发送 ‘pong消息’，并标明发送者是system2Pong
+        system1PingActorRef.tell("pong", system2PongActorRef);
     }
 }
