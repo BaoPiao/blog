@@ -4,9 +4,9 @@ Flink版本：1.13.6
 
 #### 设计思路
 
-对于多输入算子，如果一个输入源有checkpoint到达，则等待其它输入源，直到所有的checkpoint都到齐，再进行checkpoint。
+对于多输入算子，如果一个输入源有`checkpointBarrier`到达，则等待其它输入源，直到所有输入源的`checkpointBarrier`都到齐，才进行checkpoint。
 
-本文对TwoInputStreamTask的输入StreamTwoInputProcessor进行分析，分析多输入端是如何暂停进行checkpoint和恢复的
+本文对`TwoInputStreamTask`的输入`StreamTwoInputProcessor`进行分析，分析多输入端是如何暂停计算进行checkpoint和恢复计算
 
 #### 实现思路
 
@@ -14,9 +14,9 @@ Flink版本：1.13.6
 
 ![checkpoint在非源节点的处理逻辑.drawio](resource/checkpoint在非源节点的处理逻辑.drawio.png)
 
-上半部，当没有数据时或checkpoint时，线程会一直在ProcessMail小循环（一些控制类消息）直到有数据（数据、checkpointbarrier等）；当有数据时处理一条数据就会去检查一下是否有mail需要处理；线程会在mail处理和数据处理之间来回切换
+上半部，当没有数据、`checkpointBarrier`时，线程会一直在`ProcessMail`小循环（一些控制类消息）直到有数据（数据、`checkpointBarrier`等）；当有数据时，处理这条数据就会去检查一下是否有mail需要处理；线程会在mail处理和数据处理之间来回切换
 
-下半部，当StreamTwoInputProcessor一个输入源接收到checkpoint时会将当前输入源（SingleInputGate）设置为不可利用，并判断所有checkpoint是否到达；如果全部到达，则进行checkpoint，处理完成以后，会将所有输入源设置为可用状态。
+下半部，当`StreamTwoInputProcessor`一个输入源接收到`checkpoint`时会将当前输入源（`SingleInputGate`）设置为不可利用，并判断所有输入源`checkpointBarrier`是否到达；如果全部到达，则进行`checkpoint`，处理完成以后，会将所有输入源设置为可用状态。
 
 #### 代码实现
 
