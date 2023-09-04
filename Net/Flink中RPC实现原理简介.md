@@ -73,7 +73,7 @@ Flink中每个需要使用RPC的组件都会实现`RpcEndpoint`，每个`RpcEndp
 
 
 
-参考资料：
+参考资料
 
 书籍：Flink设计与实现
 
