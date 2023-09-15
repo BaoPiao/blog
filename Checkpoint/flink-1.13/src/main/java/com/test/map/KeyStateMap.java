@@ -11,6 +11,8 @@ import org.apache.flink.streaming.api.checkpoint.CheckpointedFunction;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
 
+import java.io.IOException;
+
 @Slf4j
 public class KeyStateMap extends KeyedProcessFunction<String, String, String> implements CheckpointedFunction {
     //值状态
@@ -53,7 +55,11 @@ public class KeyStateMap extends KeyedProcessFunction<String, String, String> im
 
     @Override
     public void snapshotState(FunctionSnapshotContext context) throws Exception {
-        log.info("snapshot key value state {} ", intState.value());
+        try {
+            log.info("snapshot key value state {} ", intState.value());
+        } catch (Exception e) {
+            log.error("int state is null");
+        }
 
     }
 

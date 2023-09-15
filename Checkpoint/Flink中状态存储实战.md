@@ -97,3 +97,8 @@ env.getCheckpointConfig().setCheckpointStorage("file://" + path);
 ![联合列表状态扩缩容](resource/联合列表状态扩缩容.png)
 
 通过联合列表状态重启，重启后的状态都是前面状态的总和！
+
+### 注意
+
+- 代码实现中必须指定每个算子的uid，否则在并行度发生变化时，算子uid会在重启时根据算子入和出进行修改，可能导致重启失败！
+- 

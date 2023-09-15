@@ -3,10 +3,8 @@ package com.test.operator.state.key;
 import com.test.Utils.EnvUtils;
 import com.test.Utils.PathUtils;
 import com.test.map.KeyStateMap;
-import com.test.map.TestOperatorStateSpanUnionListMap;
 import com.test.source.BroadCastStateSource;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.RandomUtils;
 import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.configuration.CheckpointingOptions;
 import org.apache.flink.configuration.Configuration;
@@ -21,11 +19,11 @@ import static com.test.Utils.ExecuteUtils.execute;
 public class TestKeyState {
     //snapshot key value state 2
     //snapshot key value state 3
-    static final String P1_UNION_LIST_STATE = "/ck/unionListState1P/chk-3";
+    static final String P1_KEY_STATE = "/ck/keyState1P/chk-7";
     ;
 
     @Test
-    public void generateP1UnionListState() throws Exception {
+    public void generateP1KeyState() throws Exception {
         String checkPointPath = PathUtils.getCurrentPath(this);
         log.info("checkpoint path is {}", checkPointPath);
         Configuration configuration = new Configuration();
@@ -35,24 +33,24 @@ public class TestKeyState {
     }
 
     @Test
-    public void useP1UnionListStateUseP1() throws Exception {
+    public void useP1KeyStateUseToP1() throws Exception {
         String checkPointPath = PathUtils.getCurrentPath(this);
         log.info("checkpoint path is {}", checkPointPath);
         Configuration configuration = new Configuration();
         configuration.setInteger(CheckpointingOptions.MAX_RETAINED_CHECKPOINTS, 1);
-        String savePointPath = checkPointPath + P1_UNION_LIST_STATE;
+        String savePointPath = checkPointPath + P1_KEY_STATE;
         configuration.setString(SavepointConfigOptions.SAVEPOINT_PATH, savePointPath);
         StreamExecutionEnvironment env = EnvUtils.ofEnv(checkPointPath, configuration);
         setOperatorAndExecute(1, env);
     }
 
     @Test
-    public void useP1UnionListStateUseP2() throws Exception {
+    public void useP1KeyStateToP2() throws Exception {
         String checkPointPath = PathUtils.getCurrentPath(this);
         log.info("checkpoint path is {}", checkPointPath);
         Configuration configuration = new Configuration();
         configuration.setInteger(CheckpointingOptions.MAX_RETAINED_CHECKPOINTS, 1);
-        String savePointPath = checkPointPath + P1_UNION_LIST_STATE;
+        String savePointPath = checkPointPath + P1_KEY_STATE;
         configuration.setString(SavepointConfigOptions.SAVEPOINT_PATH, savePointPath);
         StreamExecutionEnvironment env = EnvUtils.ofEnv(checkPointPath, configuration);
         setOperatorAndExecute(2, env);
