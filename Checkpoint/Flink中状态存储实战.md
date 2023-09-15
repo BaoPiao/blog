@@ -54,7 +54,7 @@ env.getCheckpointConfig().setCheckpointStorage("file://" + path);
 //或者设置为内存存储：env.getCheckpointConfig().setCheckpointStorage(new JobManagerCheckpointStorage());
 ```
 
-## 状态保存和恢复
+## 状态保存和恢复详解
 
 在状态运行时，状态在每个状态算子中都是独立存在，相互不会影响（及时相同Task的不同subTask之间的状态也不是共享的）；状态恢复时可区分为四种扩缩容机制分别是：键值分区、算子状态分区之广播状态（`MapState<UK, UV>`）、算子状态分区之`ListState`（`Even`）和算子状态分区之`ListState`（`Union`）
 
@@ -65,6 +65,8 @@ env.getCheckpointConfig().setCheckpointStorage("file://" + path);
 ![键值分区状态](resource/键值分区状态.png)
 
 键值分区在扩缩容时，会根据新任务的数量对键值重新分区（注意Flink并不会以单个键值作为最小单位，而是以键值组作为最小单位分配键值），如果**出现并行度多余分区数时，则子任务会空跑**
+
+`ValueState`测试代码[请参考github](https://github.com/BaoPiao/blog/tree/Flink/Checkpoint/flink-1.13/src/main/java/com/test/operator/state/key)
 
 ### 算子状态之广播状态
 
@@ -82,6 +84,8 @@ env.getCheckpointConfig().setCheckpointStorage("file://" + path);
 
 将`BroadcastState`（即`MapState<UK, UV>`）直接作为算子状态，在扩缩容时：**在缩容时，但会丢失状态**！
 
+测试代码[请参考github](https://github.com/BaoPiao/blog/tree/Flink/Checkpoint/flink-1.13/src/main/java/com/test/operator/state/broad)
+
 ### 算子状态分区之列表状态
 
 列表状态可分为两种分别是普通列表和联合列表，普通列表在扩容和缩容时状态会正常的合并和分散；联合列表无论并行度是否发生变化都会将原先几个状态合并！
@@ -98,7 +102,9 @@ env.getCheckpointConfig().setCheckpointStorage("file://" + path);
 
 通过联合列表状态重启，重启后的状态都是前面状态的总和！
 
+测试代码[请参考github](https://github.com/BaoPiao/blog/tree/Flink/Checkpoint/flink-1.13/src/main/java/com/test/operator/state/list)
+
 ### 注意
 
 - 代码实现中必须指定每个算子的uid，否则在并行度发生变化时，算子uid会在重启时根据算子入和出进行修改，可能导致重启失败！
-- 
+- 在`CheckpointedFunction`的实现方法中`snapshotState`和`initializeState`使用`intState.value()`可能会抛异常注意捕获！
