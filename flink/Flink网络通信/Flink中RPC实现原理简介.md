@@ -44,7 +44,7 @@ Flink的RPC框架基于Akka实现，其中Flink集群中实现RPC通信节点功
 
 ### AkkaRpcService
 
-`AkkaRpcService`负责创建启动Flink集群中`RpcEndPoint`组件的`RpcServer`，且`AkkaRPCService`在集群创建时就会启动完毕；UML类图如下所示
+`AkkaRpcService`负责创建启动Flink集群`RpcEndPoint`端点中的`RpcServer`组件，且`AkkaRPCService`在集群创建时就会启动完毕；UML类图如下所示
 
 ![AkkaRpcService](resource/AkkaRpcService.png)
 
@@ -60,7 +60,7 @@ Flink的RPC框架基于Akka实现，其中Flink集群中实现RPC通信节点功
 
 ### RpcServer
 
-RpcServer是一个接口类，该类实现类有`AkkaInvocationHandler`和`FencedAkkaInvocationHandler`；`AkkaInvocationHandler`中封装有`ActorRef`，并通过动态代理技术（InvocationHandler）实现远程和本地方法调用
+RpcServer是一个接口类，实际是对`Actor`的封装，该类实现类有`AkkaInvocationHandler`和`FencedAkkaInvocationHandler`；`AkkaInvocationHandler`中封装有`ActorRef`，并通过动态代理技术（InvocationHandler）实现远程和本地方法调用
 
 ![RpcServer](resource/RpcServer.png)
 
