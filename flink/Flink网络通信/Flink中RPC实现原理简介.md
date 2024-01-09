@@ -18,7 +18,7 @@ Actor模型是一个通用的并发编程模型，**该模型独立维护隔离�
 
 #### Akka系统组成
 
-Akka系统核心包括两个组件：`ActorSystem`和`Actor`（使用demo可以[参考这里](https://github.com/BaoPiao/blog/tree/net/akka)）
+Akka系统核心包括两个组件：`ActorSystem`和`Actor`（使用demo可以[参考这里](https://github.com/BaoPiao/blog/tree/main/flink/Flink%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/akka)）
 
 - 只能通过`ActorSystem.actorOf`和`ActorContext.actorOf`创建`Actor`，不允许直接创建`Actor`
 - 只能通过`ActorRef`发送消息与`Actor`通信
